@@ -1,0 +1,146 @@
+create the following file structure:
+packaging/
+  Test_pkg/
+    __init__.py
+
+cd packaging
+Test_pkg/__init__.py is required to import the directory as a package, and can simply be an empty file.
+
+Creating the package files
+You will now create a handful of files to package up this project and prepare 
+it for distribution. Create the new files listed below - you will add content to them 
+packaging/
+  Test_pkg/
+    __init__.py
+  setup.py
+  LICENSE
+  README.md
+
+Creating setup.py
+setup.py is the build script for setuptools. It tells setuptools about your package (such as the name and version) 
+as well as which code files to include.
+
+Open setup.py and enter the following content. Update the package name to include your username
+ (for example, Test-pkg-theajcodes), this ensures that you have a unique package name 
+and that your package doesn’t conflict with packages uploaded by other people .
+
+setup() takes several arguments. This example package uses a relatively minimal set:
+
+name is the distribution name of your package. This can be any name as long as only contains letters, numbers, 
+_ , and -. It also must not already be taken on pypi.org. Be sure to update this with your username, as this 
+ensures you won’t try to upload a package with the same name as one which already exists when you upload the package.
+
+version is the package version see PEP 440 for more details on versions.
+
+author and author_email are used to identify the author of the package.
+
+description is a short, one-sentence summary of the package.
+
+long_description is a detailed description of the package. This is shown on the package detail package on the Python 
+Package Index. In this case, the long description is loaded from README.md which is a common pattern.
+
+long_description_content_type tells the index what type of markup is used for the long description. In this case, 
+it’s Markdown.
+
+url is the URL for the homepage of the project. For many projects, this will just be a link to GitHub, GitLab, 
+Bitbucket, or similar code hosting service.
+
+packages is a list of all Python import packages that should be included in the distribution package. 
+Instead of listing each package manually, we can use find_packages() to automatically discover all packages 
+and subpackages. In this case, the list of packages will be example_pkg as that’s the only package present.
+
+classifiers gives the index and pip some additional metadata about your package. In this case, the package is 
+only compatible with Python 3, is licensed under the MIT license, and is OS-independent. 
+You should always include at least which version(s) of Python your package works on, which license your package 
+is available under, 
+and which operating systems your package will work on. 
+For a complete list of classifiers, see https://pypi.org/classifiers/.
+
+Creating a LICENSE¶
+It’s important for every package uploaded to the Python Package Index to include a license. 
+This tells users who install your package the terms under which they can use your package. For help picking a license, 
+see https://choosealicense.com/. Once you have chosen a license, open
+ LICENSE and enter the license text. 
+
+Generating distribution archives
+The next step is to generate distribution packages for the package. These are archives that are uploaded to the 
+Package Index and can be installed by pip.
+
+Make sure you have the latest versions of setuptools and wheel installed:
+
+python3 -m pip install --user --upgrade setuptools wheel
+
+C:\Users\Win10>python -m pip install --user --upgrade setuptools wheel
+Collecting setuptools
+  Downloading https://files.pythonhosted.org/packages/54/28/c45d8b54c1339f9644b87663945e54a8503cfef59cf0f65b3ff5dd17cf64/setuptools-42.0.2-py2.py3-none-any.whl (583kB)
+     |████████████████████████████████| 583kB 1.3MB/s
+Collecting wheel
+  Downloading https://files.pythonhosted.org/packages/00/83/b4a77d044e78ad1a45610eb88f745be2fd2c6d658f9798a15e384b7d57c9/wheel-0.33.6-py2.py3-none-any.whl
+Installing collected packages: setuptools, wheel
+  WARNING: The scripts easy_install-3.8.exe and easy_install.exe are installed in 'C:\Users\Win10\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+  WARNING: The script wheel.exe is installed in 'C:\Users\Win10\AppData\Roaming\Python\Python38\Scripts' which is not on PATH.
+  Consider adding this directory to PATH or, if you prefer to suppress this warning, use --no-warn-script-location.
+Successfully installed setuptools-42.0.2 wheel-0.33.6
+
+run this command from the same directory where setup.py is located:
+python setup.py sdist bdist_wheel
+
+This command should output a lot of text and once completed should generate two files in the dist directory:
+
+dist/
+  example_pkg_YOUR_USERNAME_HERE-0.0.1-py3-none-any.whl
+  example_pkg_YOUR_USERNAME_HERE-0.0.1.tar.gz
+
+The tar.gz file is a source archive whereas the .whl file is a built distribution. Newer pip versions preferentially install built distributions, but will fall back to source archives if needed. You should always upload a source archive and provide built archives for the platforms your project is compatible with. In this case, our
+example package is compatible with Python on any platform so only one built distribution is needed.
+
+Finally, it’s time to upload your package to the Python Package Index!
+
+The first thing you’ll need to do is register an account on Test PyPI. Test PyPI is a separate instance of the package index intended for testing and experimentation. It’s great for things like this tutorial where we don’t necessarily want to upload to the real index. To register an account, go to https://test.pypi.org/account/register/ and
+ complete the steps on that page. You will also need to verify your email address before you’re able to upload any packages.
+
+Now that you are registered, you can use twine to upload the distribution packages. You’ll need to install Twine:
+
+python -m pip install --user --upgrade twine
+Once installed, run Twine to upload all of the archives under dist:
+
+python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/* 
+
+C:\PythonCodes\Packaging>python -m twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+Uploading distributions to https://test.pypi.org/legacy/
+Enter your username: ajaykuma24
+Enter your password:
+Uploading Test_pkg_theajcodes-0.0.1-py3-none-any.whl
+100%|████████████████████████████████████████████████████████████| 5.58k/5.58k [00:01<00:00, 3.03kB/s]
+Uploading Test-pkg-theajcodes-0.0.1.tar.gz
+100%|████████████████████████████████████████████████████████████| 4.55k/4.55k [00:01<00:00, 3.27kB/s]
+
+View at:
+https://test.pypi.org/project/Test-pkg-theajcodes/0.0.1/
+
+Installing your newly uploaded package
+You can use pip to install your package and verify that it works.
+
+C:\PythonCodes\TestPackaging>python -m pip install --index-url https://test.pypi.org/simple/ --no-deps Test-pkg-theajcodes
+Looking in indexes: https://test.pypi.org/simple/
+Collecting Test-pkg-theajcodes
+  Downloading https://test-files.pythonhosted.org/packages/ef/5e/64f4496306a6e4025319c828468e9c433951e9eefaf2b0456a4f970dcbd7/Test_pkg_theajcodes-0.0.1-py3-none-any.whl
+Installing collected packages: Test-pkg-theajcodes
+Successfully installed Test-pkg-theajcodes-0.0.1
+
+=====================
+
+
+
+
+
+
+
+
+
+
+
+
+
+

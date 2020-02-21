@@ -1,0 +1,10 @@
+Installing Jupyter Notebook(using Anaconda)
+-------------------------
+Download Anaconda
+https://www.anaconda.com/distribution/
+Python 3.7 version
+
+64-Bit Graphical Installer (462 MB)
+
+Run the executable.
+If python already installed,don't choose advanced options.

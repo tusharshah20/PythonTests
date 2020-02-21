@@ -1,0 +1,137 @@
+Sklearn Future Warnings:
+FutureWarning for LogisticRegression
+The LogisticRegression algorithm has two recent changes to the default argument values that result in FutureWarning messages.
+
+The first has to do with the solver for finding coefficients and the second has to do with how the model should be used 
+to make multi-class classifications. 
+
+Changes to the Solver
+The example below will generate a FutureWarning about the solver argument used by LogisticRegression.
+
+# example of LogisticRegression that generates a FutureWarning
+from sklearn.datasets import make_blobs
+from sklearn.linear_model import LogisticRegression
+# prepare dataset
+X, y = make_blobs(n_samples=100, centers=2, n_features=2)
+# create and configure model
+model = LogisticRegression()
+# fit model
+model.fit(X, y)
+Running the example results in the following warning message:
+
+FutureWarning: Default solver will be changed to 'lbfgs' in 0.22. Specify a solver to silence this warning.
+This issue involves a change from the ‘solver‘ argument that used to default to ‘liblinear‘ and will change to 
+default to ‘lbfgs‘ in a future version. You must now specify the ‘solver‘ argument.
+
+To maintain the old behavior, you can specify the argument as follows:
+
+# create and configure model
+model = LogisticRegression(solver='liblinear')
+
+To support the new behavior (recommended), you can specify the argument as follows:
+
+# create and configure model
+model = LogisticRegression(solver='lbfgs')
+
+Changes to the Multi-Class
+The example below will generate a FutureWarning about the ‘multi_class‘ argument used by LogisticRegression.
+
+# example of LogisticRegression that generates a FutureWarning
+from sklearn.datasets import make_blobs
+from sklearn.linear_model import LogisticRegression
+# prepare dataset
+X, y = make_blobs(n_samples=100, centers=3, n_features=2)
+# create and configure model
+model = LogisticRegression(solver='lbfgs')
+# fit model
+model.fit(X, y)
+Running the example results in the following warning message:
+
+FutureWarning: Default multi_class will be changed to 'auto' in 0.22. Specify the multi_class option to silence this warning.
+This warning message only affects the use of logistic regression for multi-class classification problems, 
+instead of the binary classification problems for which the method was designed.
+
+The default of the ‘multi_class‘ argument is changing from ‘ovr‘ to ‘auto‘.
+
+To maintain the old behavior, you can specify the argument as follows:
+
+# create and configure model
+model = LogisticRegression(solver='lbfgs', multi_class='ovr')
+To support the new behavior (recommended), you can specify the argument as follows:
+
+# create and configure model
+model = LogisticRegression(solver='lbfgs', multi_class='auto')
+
+FutureWarning for SVM
+The support vector machine implementation has had a recent change to the ‘gamma‘ argument that results in a warning message,
+ specifically the SVC and SVR classes.
+
+The example below will generate a FutureWarning about the ‘gamma‘ argument used by SVC, but just as equally applies to SVR.
+
+# example of SVC that generates a FutureWarning
+from sklearn.datasets import make_blobs
+from sklearn.svm import SVC
+# prepare dataset
+X, y = make_blobs(n_samples=100, centers=2, n_features=2)
+# create and configure model
+model = SVC()
+# fit model
+model.fit(X, y)
+Running this example will generate the following warning message:
+
+FutureWarning: The default value of gamma will change from 'auto' to 'scale' in version 0.22 to account better for 
+unscaled features. Set gamma explicitly to 'auto' or 'scale' to avoid this warning.
+This warning message reports that the default for the ‘gamma‘ argument is changing from the current value of ‘auto‘ 
+to a new default value of ‘scale‘.
+
+The gamma argument only impacts SVM models that use the RBF, Polynomial, or Sigmoid kernel.
+
+The parameter controls the value of the ‘gamma‘ coefficient used in the algorithm and if you do not specify a value, 
+a heuristic is used to specify the value. The warning is about a change in the way that the default will be calculated.
+
+To maintain the old behavior, you can specify the argument as follows:
+
+
+# create and configure model
+model = SVC(gamma='auto')
+To support the new behavior (recommended), you can specify the argument as follows:
+
+
+# create and configure model
+model = SVC(gamma='scale')
+
+FutureWarning for Decision Tree Ensemble Algorithms
+The decision-tree based ensemble algorithms will change the number of sub-models or trees used in the ensemble 
+controlled by the ‘n_estimators‘ argument.
+
+This affects models’ random forest and extra trees for classification and regression, specifically the classes: 
+RandomForestClassifier, RandomForestRegressor, ExtraTreesClassifier, ExtraTreesRegressor, and RandomTreesEmbedding.
+
+The example below will generate a FutureWarning about the ‘n_estimators‘ argument used by RandomForestClassifier, 
+but just as equally applies to RandomForestRegressor and the extra trees classes.
+
+# example of RandomForestClassifier that generates a FutureWarning
+from sklearn.datasets import make_blobs
+from sklearn.ensemble import RandomForestClassifier
+# prepare dataset
+X, y = make_blobs(n_samples=100, centers=2, n_features=2)
+# create and configure model
+model = RandomForestClassifier()
+# fit model
+model.fit(X, y)
+
+
+
+FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
+This warning message reports that the number of submodels is increasing from 10 to 100, likely because 
+computers are getting faster and 10 is very small, even 100 is small.
+
+To maintain the old behavior, you can specify the argument as follows:
+
+# create and configure model
+model = RandomForestClassifier(n_estimators=10)
+To support the new behavior (recommended), you can specify the argument as follows:
+
+# create and configure model
+model = RandomForestClassifier(n_estimators=100)
+More Future Warnings?

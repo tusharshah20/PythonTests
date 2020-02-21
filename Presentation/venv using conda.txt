@@ -1,0 +1,134 @@
+(base) C:\Users\Win10>conda -V
+conda 4.7.12
+
+(base) C:\Users\Win10>conda update conda
+Collecting package metadata (current_repodata.json): done
+Solving environment: done
+
+## Package Plan ##
+
+  environment location: C:\Users\Win10\Anaconda3
+
+  added / updated specs:
+    - conda
+
+
+The following packages will be downloaded:
+
+    package                    |            build
+    ---------------------------|-----------------
+    backports.functools_lru_cache-1.6.1|             py_0          11 KB
+    conda-4.8.0                |           py37_0         2.8 MB
+    future-0.18.2              |           py37_0         743 KB
+    ------------------------------------------------------------
+                                           Total:         3.6 MB
+
+The following packages will be UPDATED:
+
+  backports.functoo~                               1.5-py_2 --> 1.6.1-py_0
+  conda                                       4.7.12-py37_0 --> 4.8.0-py37_0
+  future                                      0.17.1-py37_0 --> 0.18.2-py37_0
+
+
+Proceed ([y]/n)? y
+
+
+Downloading and Extracting Packages
+backports.functools_ | 11 KB     | ############################################################################################################################################# | 100%
+conda-4.8.0          | 2.8 MB    | ############################################################################################################################################# | 100%
+future-0.18.2        | 743 KB    | ############################################################################################################################################# | 100%
+Preparing transaction: done
+Verifying transaction: done
+Executing transaction: done
+
+(base) C:\Users\Win10>conda search "^python$"
+Loading channels: done
+# Name                       Version           Build  Channel
+python                        2.7.13     h1b6d89f_16  pkgs/main
+python                        2.7.13     h9912b81_15  pkgs/main
+python                        2.7.13     hb034564_12  pkgs/main
+python                        2.7.14     h2765ee6_18  pkgs/main
+python                        2.7.14     h3e68818_15  pkgs/main
+python                        2.7.14     h4084c39_22  pkgs/main
+python                        2.7.14     h4a10d90_30  pkgs/main
+python                        2.7.14     h4a10d90_31  pkgs/main
+python                        2.7.14     h59f5a59_20  pkgs/main
+python                        2.7.14     h819644d_16  pkgs/main
+python                        2.7.14     h8c3f1cb_23  pkgs/main
+python                        2.7.15      h2880e7c_2  pkgs/main
+python                        2.7.15      h2880e7c_3  pkgs/main
+python                        2.7.15      h2880e7c_4  pkgs/main
+python                        2.7.15     hcb6e200_15  pkgs/main
+python                        2.7.15      hcb6e200_5  pkgs/main
+python                        2.7.15      hcb6e200_7  pkgs/main
+python                        2.7.15      he216670_0  pkgs/main
+python                        2.7.16      hcb6e200_0  pkgs/main
+python                        2.7.17      h930f6bb_0  pkgs/main
+python                         3.5.4     h1357f44_23  pkgs/main
+python                         3.5.4     hc495aa9_21  pkgs/main
+python                         3.5.4     hd3c4935_11  pkgs/main
+python                         3.5.4     hdec4e59_20  pkgs/main
+python                         3.5.4     hedc2606_15  pkgs/main
+python                         3.5.5      h0c2934d_0  pkgs/main
+python                         3.5.5      h0c2934d_1  pkgs/main
+python                         3.5.5      h0c2934d_2  pkgs/main
+python                         3.5.6      he025d50_0  pkgs/main
+python                         3.6.2     h09676a0_15  pkgs/main
+python                         3.6.2     h6679aeb_11  pkgs/main
+python                         3.6.3      h210ce5f_2  pkgs/main
+python                         3.6.3      h3389d20_0  pkgs/main
+python                         3.6.3      h3b118a2_4  pkgs/main
+python                         3.6.3      h9e2ca53_1  pkgs/main
+python                         3.6.4      h0c2934d_2  pkgs/main
+python                         3.6.4      h0c2934d_3  pkgs/main
+python                         3.6.4      h6538335_0  pkgs/main
+python                         3.6.4      h6538335_1  pkgs/main
+python                         3.6.5      h0c2934d_0  pkgs/main
+python                         3.6.6      hea74fb7_0  pkgs/main
+python                         3.6.7      h33f27b4_0  pkgs/main
+python                         3.6.7      h33f27b4_1  pkgs/main
+python                         3.6.7      h9f7ef89_2  pkgs/main
+python                         3.6.8      h9f7ef89_0  pkgs/main
+python                         3.6.8      h9f7ef89_1  pkgs/main
+python                         3.6.8      h9f7ef89_7  pkgs/main
+python                         3.6.9      h5500b2f_0  pkgs/main
+python                         3.7.0      hea74fb7_0  pkgs/main
+python                         3.7.1      h33f27b4_3  pkgs/main
+python                         3.7.1      h33f27b4_4  pkgs/main
+python                         3.7.1      h8c8aaf0_6  pkgs/main
+python                         3.7.1      he44a216_5  pkgs/main
+python                         3.7.2      h8c8aaf0_0  pkgs/main
+python                         3.7.2     h8c8aaf0_10  pkgs/main
+python                         3.7.2      h8c8aaf0_2  pkgs/main
+python                         3.7.3      h8c8aaf0_0  pkgs/main
+python                         3.7.3      h8c8aaf0_1  pkgs/main
+python                         3.7.4      h5263a28_0  pkgs/main
+python                         3.7.5      h8c8aaf0_0  pkgs/main
+python                         3.8.0      hff0d562_0  pkgs/main
+python                         3.8.0      hff0d562_1  pkgs/main
+python                         3.8.0      hff0d562_2  pkgs/main
+
+(base) C:\Users\Win10>python
+Python 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] :: Anaconda, Inc. on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> quit()
+
+conda create -n yourenvname python=x.x anaconda
+
+This will install the Python version and all the associated anaconda packaged libraries 
+at “path_to_your_anaconda_location/anaconda/envs/yourenvname”
+
+conda activate yourenvname
+
+Activating a conda environment modifies the PATH and shell variables to point to the specific isolated Python set-up you created. The command prompt will change to indicate which conda environemnt you are currently in by prepending (yourenvname). To see a list of all your environments, use the command conda info -e.
+
+Install additional packages to  a virtual environment
+conda install -n yourenvname [package]
+Note**Failure to specify “-n yourenvname” will install the package to the root Python installation.
+
+--to Deactivate
+conda deactivate
+
+--to delete conda environment
+conda remove -n yourenvname -all
+                                                               

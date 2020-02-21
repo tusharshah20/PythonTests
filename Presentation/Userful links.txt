@@ -1,0 +1,6 @@
+https://machinelearningmastery.com/decompose-time-series-data-trend-seasonality/
+https://facebook.github.io/prophet/
+https://jakevdp.github.io/PythonDataScienceHandbook/03.11-working-with-time-series.html
+https://towardsdatascience.com/time-series-analysis-in-python-an-introduction-70d5a5b1d52a
+https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html
+https://machinelearningmastery.com/normalize-standardize-time-series-data-python/
