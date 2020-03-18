@@ -1,7 +1,10 @@
+import pandas as pd
+import numpy as np
+
 #Hierarchial Indexing
 #Enables you to have multiple (two or more) index levels on an axis. 
 # It provides a way for you to work with higher dimensional data in a lower dimensional form.
-data = Series(np.random.randn(10),
+data = np.Series(np.random.randn(10),
 index=[['a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'd', 'd'],
 [1, 2, 3, 1, 2, 3, 1, 2, 2, 3]])
 data
@@ -24,7 +27,7 @@ data.unstack()
 data.unstack().stack()
 
 #With a DataFrame, either axis can have a hierarchical index
-frame = DataFrame(np.arange(12).reshape((4, 3)),
+frame = pd.DataFrame(np.arange(12).reshape((4, 3)),
 index=[['a', 'a', 'b', 'b'], [1, 2, 1, 2]],
 columns=[['germany', 'france', 'sweden'],
 ['Green', 'Red', 'Green']])
@@ -58,7 +61,7 @@ frame.sum(level='key2')
 frame.sum(level='color', axis=1)
 
 #Using a DataFrame’s Columns for indexing
-frame = DataFrame({'a': range(7), 'b': range(7, 0, -1),
+frame = pd.DataFrame({'a': range(7), 'b': range(7, 0, -1),
 'c': ['one', 'one', 'one', 'two', 'two', 'two', 'two'],
 'd': [0, 1, 2, 0, 1, 2, 3]})
 frame

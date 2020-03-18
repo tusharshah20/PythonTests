@@ -1,6 +1,7 @@
 Sklearn Future Warnings:
 FutureWarning for LogisticRegression
-The LogisticRegression algorithm has two recent changes to the default argument values that result in FutureWarning messages.
+The LogisticRegression algorithm has two recent changes to the
+ default argument values that result in FutureWarning messages.
 
 The first has to do with the solver for finding coefficients and the second has to do with how the model should be used 
 to make multi-class classifications. 

@@ -1,6 +1,9 @@
+import pandas as pd
+import numpy as np
+
 #Handling Missing Data
 #Note**All of the descriptive statistics on pandas objects exclude missing data.
-string_data = Series(['apple', 'orange', np.nan, 'avocado','grapes'])
+string_data = np.Series(['apple', 'orange', np.nan, 'avocado','grapes'])
 string_data.isnull()
 
 #built-in Python None value is also treated as NA in object arrays
@@ -11,14 +14,14 @@ string_data.isnull()
 #dropna Filter axis labels based on whether values for each label have missing data, 
 # with varying thresholds for how much missing data to tolerate.
 from numpy import nan as NA
-data = Series([1, NA, 3.5, NA, 7])
+data = np.Series([1, NA, 3.5, NA, 7])
 data.dropna()
 
 #by boolean indexing method
 data[data.notnull()]
 
 #in df, we may want to drop rows/columns which are all NAs or those just containing NAs
-data = DataFrame([[1., 6.5, 3.], [1., NA, NA],
+data = pd.DataFrame([[1., 6.5, 3.], [1., NA, NA],
 [NA, NA, NA], [NA, 6.5, 3.]])
 
 cleaned_data = data.dropna()
@@ -34,7 +37,7 @@ data.dropna(axis=1, how='all')
 
 #To keep only rows containing a certain number of observations
 #using thresh
-df = DataFrame(np.random.randn(7, 3))
+df = pd.DataFrame(np.random.randn(7, 3))
 df
 df.loc[:4, 1] = NA
 df.loc[:2, 2] = NA
@@ -55,7 +58,7 @@ _ = df.fillna(0, inplace=True) #always returns a reference to the filled object
 df
 
 #using ffill
-df = DataFrame(np.random.randn(6, 3))
+df = pd.DataFrame(np.random.randn(6, 3))
 df.ix[2:, 1] = NA
 df.loc[4:, 2] = NA
 df
@@ -63,7 +66,7 @@ df.fillna(method='ffill')
 df.fillna(method='ffill', limit=2)
 
 #using fillna and passing mean/median 
-data = Series([1., NA, 3.5, NA, 7])
+data = np.Series([1., NA, 3.5, NA, 7])
 data.fillna(data.mean())
 
 

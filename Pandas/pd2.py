@@ -15,10 +15,12 @@ print(frame)
 
 
 #index assigned automatically as with Series, and the columns are placed in sorted order
-print(frame)
+#print(frame)
 
 #if we specify a sequence of columns, the DataFrame’s columns will be exactly what we pass
 pd.DataFrame(data, columns=['year', 'eucountry', 'popul'])
+print(pd.DataFrame(data, columns=['year', 'eucountry', 'popul']))
+print(frame)
 
 #As with Series, if you pass a column that isn’t contained in data, it will appear with NA values in the result
 frame2 = pd.DataFrame(data, columns=['year', 'eucountry', 'popul', 'debt'],
@@ -84,6 +86,7 @@ print(frame3.T)
 #The keys in the inner dicts are unioned and sorted to form the index in the result. This
 #isn’t true if an explicit index is specified:
 pd.DataFrame(pop, index=[2001, 2002, 2003])
+print(pd.DataFrame(pop, index=[2001, 2002, 2003]))
 
 #Dicts of Series are treated much in the same way:
 pdata = {'norway': frame3['norway'][:-1],

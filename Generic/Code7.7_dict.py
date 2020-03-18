@@ -57,9 +57,11 @@ digits_mapping = {
     "4": "Four"
 }
 output = ""
+
 for ch in phone:
     output += digits_mapping.get(ch, "!") + " "
-print(output)
+    print(output)
+
 
 #using split
 message = input("> ")

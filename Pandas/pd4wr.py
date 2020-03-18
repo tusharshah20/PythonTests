@@ -1,8 +1,16 @@
+import pandas as pd
+import numpy as np
+
 data = pd.DataFrame({'k1': ['one'] * 3 + ['two'] * 4,'k2': [1, 1, 2, 3, 3, 4, 4]})
 data
+print(data)
+
 data.duplicated
+print(data.duplicated)
+
 data.drop_duplicates()
 #data.drop_duplicates(['k1'])
+print(data.drop_duplicates())
 
 #both of these by default keep the first observed value combination.
 #data.drop_duplicates(['k1', 'k2'], take_last=True)
@@ -12,6 +20,7 @@ data = pd.DataFrame({'food': ['bacon', 'pulled pork', 'bacon', 'Pastrami',
 'corned beef', 'Bacon', 'pastrami', 'honey ham','nova lox'],
 'ounces': [4, 3, 12, 6, 7.5, 8, 3, 5, 6]})
 data
+print(data)
 
 meat_to_animal = {
 'bacon': 'pig',
@@ -23,16 +32,18 @@ meat_to_animal = {
 }
 
 data['animal'] = data['food'].map(str.lower).map(meat_to_animal)
-data
+print(data)
 
 #using lambda
-data['food'].map(lambda x: meat_to_animal[x.lower()])
+#data['food'].map(lambda x: meat_to_animal[x.lower()])
+print(data['food'].map(lambda x: meat_to_animal[x.lower()]))
 
 #replacing value
 data = pd.Series([1., -999., 2., -999., -1000., 3.])
-data.replace(-999, np.nan)
+#data.replace(-999, np.nan)
+print(data.replace(-999, np.nan))
 
-#replaving multiple values
+#replacing multiple values
 data.replace([-999, -1000], np.nan)
 
 #different replacement for each value

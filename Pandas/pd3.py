@@ -6,8 +6,11 @@ import numpy as np
 from pandas import Series,DataFrame
 item = pd.Series(range(3),index = ['a','b','c'])
 index = item.index
-index
+
+print(index)
 index[1:]
+print(index[1:])
+
 
 #type(item)
 #type(index)
@@ -16,8 +19,11 @@ index[1:]
 
 index
 index = pd.Index(np.arange(3))
+print(index)
+print('*' * 50)
 item2 = Series([1,2,3],index=index)
 item2.index is index
+print(item2.index is index)
 
 #Apart from being array-like, an Index also functions as a fixed-size set:
 pop = {'norway': {2001: 2.4, 2002: 2.9},
@@ -26,4 +32,7 @@ frame3 = pd.DataFrame(pop)
 print(frame3)
 
 'norway' in frame3.columns
+print('norway' in frame3.columns)
+
 2003 in frame3.index
+print(2003 in frame3.index)

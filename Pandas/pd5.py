@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 #series indexing 
-ser7 = Series(np.arange(4.), index=['a', 'b', 'c', 'd'])
+ser7 = np.Series(np.arange(4.), index=['a', 'b', 'c', 'd'])
 ser7
 ser7['a']
 ser7[1] 
@@ -19,7 +19,7 @@ ser7['b':'c'] = 5
 ser7
 
 #indexing into a DataFrame
-data1 = DataFrame(np.arange(16).reshape((4, 4)),index=['paris', 'belgium', 'vienna', 'basel'],
+data1 = pd.DataFrame(np.arange(16).reshape((4, 4)),index=['paris', 'belgium', 'vienna', 'basel'],
 columns=['one', 'two', 'three', 'four'])
 data1
 
@@ -44,24 +44,24 @@ data1.loc[:'belgium','two']
 #arithmetic operation between objects with different indexes. When adding together objects, 
 # if any index pairs are not the same, the respective index in the result will be the union of the index pairs.
 
-s1 = Series([7.3, -2.5, 3.4, 1.5], index=['a', 'c', 'd', 'e'])
-s2 = Series([-2.1, 3.6, -1.5, 4, 3.1], index=['a', 'c', 'e', 'f', 'g'])
+s1 = np.Series([7.3, -2.5, 3.4, 1.5], index=['a', 'c', 'd', 'e'])
+s2 = np.Series([-2.1, 3.6, -1.5, 4, 3.1], index=['a', 'c', 'e', 'f', 'g'])
 s1
 s2
 s1+s2
 
 #In the case of DataFrame, alignment is performed on both the rows and the columns:
-df1 = DataFrame(np.arange(9.).reshape((3, 3)), columns=list('bcd'),
+df1 = pd.DataFrame(np.arange(9.).reshape((3, 3)), columns=list('bcd'),
 index=['Ohio', 'Texas', 'Colorado'])
-df2 = DataFrame(np.arange(12.).reshape((4, 3)), columns=list('bde'),
+df2 = pd.DataFrame(np.arange(12.).reshape((4, 3)), columns=list('bde'),
 index=['Utah', 'Ohio', 'Texas', 'Oregon'])
 
 #Adding returns a DataFrame whose index and columns are the unions of the ones in each DataFrame:
 df1+df2
 
 #Arithmetic methods with fill values
-df1 = DataFrame(np.arange(12.).reshape((3, 4)), columns=list('abcd'))
-df2 = DataFrame(np.arange(20.).reshape((4, 5)), columns=list('abcde'))
+df1 = pd.DataFrame(np.arange(12.).reshape((3, 4)), columns=list('abcd'))
+df2 = pd.DataFrame(np.arange(20.).reshape((4, 5)), columns=list('abcde'))
 df1+df2
 
 #using add method

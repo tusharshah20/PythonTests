@@ -1,9 +1,16 @@
+import pandas as pd
+import numpy as np
+
 #Panel data
 #pandas has a Panel data structure ie 3d interms or DF
 #To create a Panel, you can use a dict of DataFrame objects or a three-dimensional ndarray
-import pandas.io.data as web
+from pandas.io import data, wb
+#or
+from pandas_datareader import data, wb
+#import pandas.io.data as web
 
-pdata = pd.Panel(dict((stk, web.get_data_yahoo(stk, '1/1/2009', '6/1/2012'))
+
+pdata = pd.Panel(dict((stk, wb.get_data_yahoo(stk, '1/1/2009', '6/1/2012'))
 for stk in ['AAPL', 'GOOG', 'MSFT', 'DELL']))
 
 pdata
