@@ -17,8 +17,8 @@ print(df.head())
 df['month'] = pd.DatetimeIndex(df['birth_date']).month
 print(df.head())
 
-#if the date format comes in datetime, we can also extract the day/month/year using the to_period function
-#where 'D', 'M', 'Y' are inputs
+#if the date format comes in datetime, we can also extract the day/month/year 
+# using the to_period function #where 'D', 'M', 'Y' are inputs
 df['month_year'] = pd.to_datetime(df['birth_date']).dt.to_period('M')
 df.head()
 

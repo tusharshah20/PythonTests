@@ -11,8 +11,8 @@ s_country = pd.Series(np_country)
 print(s_country)
 
 #evaluate countries and their corresponding gdp per capita and print them as series
-dict_country_gdp = pd.Series([52056.1234,40345.4565,45456.78564,33245.56782,34544.45888],index=['Luxembourg','Japan','Norway',
-'China','India'])
+dict_country_gdp = pd.Series([52056.1234,40345.4565,45456.78564,33245.56782,34544.45888],
+index=['Luxembourg','Japan','Norway','China','India'])
 print(dict_country_gdp)
 
 #print series with scalar input

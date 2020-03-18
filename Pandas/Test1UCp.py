@@ -28,7 +28,7 @@ print(b)
 # origin=’unix’, cache=False)
 print('*'*60)
 import pandas as pd
-Test = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/opsd_germany_daily_withTStamp.txt')
+Test = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/opsd_germany_daily_withTStamp.txt')
 print(Test.columns)
 print(Test.dtypes)
 print(Test.head(3))

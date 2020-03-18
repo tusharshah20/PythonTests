@@ -3,8 +3,9 @@ import numpy as np
 
 #Hierarchial Indexing
 #Enables you to have multiple (two or more) index levels on an axis. 
-# It provides a way for you to work with higher dimensional data in a lower dimensional form.
-data = np.Series(np.random.randn(10),
+# It provides a way for you to work with higher dimensional data in a lower 
+# dimensional form.
+data = pd.Series(np.random.randn(10),
 index=[['a', 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'd', 'd'],
 [1, 2, 3, 1, 2, 3, 1, 2, 2, 3]])
 data

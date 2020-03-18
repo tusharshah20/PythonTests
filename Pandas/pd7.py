@@ -25,7 +25,7 @@ frame['e'].map(format)
 
 #Sorting & Ranking
 #To sort lexicographically by row or column index, use the sort_index method
-ser8 = np.Series(range(4), index=['d', 'a', 'b', 'c'])
+ser8 = pd.Series(range(4), index=['d', 'a', 'b', 'c'])
 ser8.sort_index()
 
 #With a DataFrame, you can sort by index on either axis
@@ -46,7 +46,7 @@ frame.sort_index(by=['a', 'b'])
 # in an array. The rank methods for Series and DataFrame breaks ties by assigning
 #each group the mean rank
 
-ser10 = np.Series([7, -5, 7, 4, 2, 0, 4])
+ser10 = pd.Series([7, -5, 7, 4, 2, 0, 4])
 ser10.rank()
 
 #Ranks can also be assigned according to the order they’re observed in the data

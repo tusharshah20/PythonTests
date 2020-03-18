@@ -1,5 +1,6 @@
 import pandas as pd
 power = pd.read_csv("I:\\Trainings\\MyContent\\Books\\resources\\power.csv")
+
 power.columns
 df = pd.DataFrame(power)
 df.index   #shows RangeIndex(start=0, stop=37623, step=1

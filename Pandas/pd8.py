@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 
 #Axis indexes with duplicate values
-ser11 = np.Series(range(5), index=['a', 'a', 'b', 'b', 'c'])
+ser11 = pd.Series(range(5), index=['a', 'a', 'b', 'b', 'c'])
 ser11.index.is_unique
 
 #Data selection with duplicates. 
@@ -26,10 +26,10 @@ df.mean(axis=1, skipna=False)
 df.describe()
 
 #On non-numeric data, describe produces alternate summary statistics
-ser12 = np.Series(['a', 'a', 'b', 'c'] * 4)
+ser12 = pd.Series(['a', 'a', 'b', 'c'] * 4)
 ser12.describe()
 
-ser13 = np.Series(['c', 'a', 'd', 'a', 'a', 'b', 'b', 'c', 'c'])
+ser13 = pd.Series(['c', 'a', 'd', 'a', 'a', 'b', 'b', 'c', 'c'])
 uniques = ser13.unique()
 uniques
 uniques.sort()

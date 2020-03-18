@@ -1,11 +1,13 @@
 #operations between dataframe and series
+import pandas as pd
+import numpy as np
 arr = np.arange(12.).reshape((3, 4))
 arr
 arr[0]
 arr-arr[0] #example of broadcasting
 arr
 
-frame = DataFrame(np.arange(12.).reshape((4, 3)), columns=list('bde'),
+frame = pd.DataFrame(np.arange(12.).reshape((4, 3)), columns=list('bde'),
 index=['germany', 'austria', 'russia', 'sweden'])
 
 frame
@@ -18,7 +20,7 @@ frame - series
 
 #If an index value is not found in either the DataFrame’s columns or the Series’s index,
 #the objects will be reindexed to form the union
-series2 = Series(range(3), index=['b', 'e', 'f'])
+series2 = pd.Series(range(3), index=['b', 'e', 'f'])
 frame+series2
 
 #to broadcast over the columns, matching on the rows, use one of the arithmetic methods.

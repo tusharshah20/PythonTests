@@ -3,7 +3,7 @@ import numpy as np
 
 #Handling Missing Data
 #Note**All of the descriptive statistics on pandas objects exclude missing data.
-string_data = np.Series(['apple', 'orange', np.nan, 'avocado','grapes'])
+string_data = pd.Series(['apple', 'orange', np.nan, 'avocado','grapes'])
 string_data.isnull()
 
 #built-in Python None value is also treated as NA in object arrays
