@@ -19,7 +19,7 @@ print(country_with_min_gdp_per_capita)
 for country in countries:
     print('ecalculating country {}'.format(country))
 
-for i in range(len(countries)):
+for i in range(len(countries)-1):
     country = countries[i]
     country_gdp_per_capita = gdp_per_capita[i]
     print('country {} per capita gdp is {}'.format(country,country_gdp_per_capita))
@@ -27,7 +27,7 @@ for i in range(len(countries)):
 print(gdp_per_capita.max())
 print(gdp_per_capita.min())
 print(gdp_per_capita.mean())
-print(gdp_per_capita.std)
+print(gdp_per_capita.std())
 
 
 

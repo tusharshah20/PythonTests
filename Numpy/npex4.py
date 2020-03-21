@@ -1,8 +1,10 @@
 import numpy as np
 #addition
 np.add(45,20)
+print(np.add(45,20))
 #subtraction
 np.subtract(45,23)
+print(np.subtract(45,23))
 
 #ndarray multiplication
 #create ndarray which contains number of hrs worked for 5 days

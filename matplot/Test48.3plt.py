@@ -16,7 +16,7 @@ def plot_ap(ap, x, y, title="", xlabel='Date', ylabel='Value', dpi=100):
     plt.fill_between(x, y1=y1, y2=-y1, alpha=0.5, linewidth=2, color='seagreen')
     plt.ylim(-800, 800)
     plt.title('Air Passengers (Two Side View)', fontsize=16)
-    plt.hlines(y=0, xmin=np.min(ap.date), xmax=np.max(ap.date), linewidth=.5)
+    #plt.hlines(y=0, xmin=np.min(ap.date), xmax=np.max(ap.date), linewidth=.5)
     plt.show()
 plot_ap(ap, x=ap.index, y=ap.value) 
 #Since its a monthly time series and follows a certain repetitive pattern every year,

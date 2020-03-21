@@ -24,7 +24,7 @@ print(dfT.head())
 #Note**the ‘value’ column is placed higher than date to imply that it is a series.
 
 print("--Panel Data--")
-dfP = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/MarketArrivals.csv')
+dfP = pd.read_csv('I:\\Trainings\\MyContent\\Books\\resources\\MarketArrivals.csv')
 dfP = dfP.loc[dfP.market=='MUMBAI', :]
 dfP.head()
 print(dfP.head())

@@ -43,25 +43,30 @@ print('*'*100)
 print('b' in ser2)
 print('e' in ser2)
 print('*' * 100)
-#If you have data contained in a Python dict, you can create a Series from it by passing the dict:
+
+#If you have data contained in a Python dict, you can create a Series from it 
+# by passing the dict:
 sdata = {'paris': 35000, 'germany': 71000, 'greece': 16000, 'norway': 5000}
 ser3 = pd.Series(sdata)
 print(ser3)
 print('*'*100)
+
 #When only passing a dict, the index in the resulting Series will have the 
-# dict’s keys in
-#sorted order
+# dict’s keys in sorted order
 country = ['greece', 'paris', 'germany', 'norway']
 ser4 = pd.Series(sdata, index=country)
 print(ser4)
 print('*'*100)
+
 #The isnull and notnull functions in pandas should be used to detect missing data
 pd.isnull(ser4)
 pd.notnull(ser4)
 print('*'*100)
+
 #Series also has these as instance methods
 print(ser4.isnull())
 print('*'*100)
+
 #A critical Series feature for many applications is that it automatically 
 # aligns differently indexed
 #data in arithmetic operations:
@@ -69,12 +74,14 @@ print(ser3)
 print(ser4)
 print(ser3 + ser4)
 print('*'*100)
+
 #Both the Series object itself and its index have a name attribute, which integrates with
 #other key areas of pandas functionality:
 ser4.name = 'population'
 ser4.index.name = 'country'
 print(ser4)
 print('*'*100)
+
 #A Series’s index can be altered in place by assignment
 ser.index = ['Bob', 'Steve', 'Jeff', 'Ryan']
 print(ser)

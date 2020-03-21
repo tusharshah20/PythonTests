@@ -96,7 +96,9 @@ pd.DataFrame(pdata)
 #If a DataFrame’s index and columns have their name attributes set, these will also be
 #displayed:
 print(frame3)
-frame3.index.name = 'year'; frame3.columns.name = 'eucountry'
+frame3.index.name = 'year'; 
+frame3.columns.name = 'eucountry'
+
 print(frame3)
 
 #Like Series, the values attribute returns the data contained in the DataFrame as a 2D #ndarray:
