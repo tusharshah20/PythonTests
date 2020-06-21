@@ -5,6 +5,7 @@ for i in lst:
     newlst.extend(i)
 newlst
 result = [{l:newlst.count(l)} for l in set(newlst)]
+result
 
 
 

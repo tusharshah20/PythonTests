@@ -1,6 +1,6 @@
 #####
-# x = "welcome to the geeks world"
-# y = "this should be welcome to geek\'s world"
+# x = "welcome to the world"
+# y = "this should be welcome to user\'s world"
 # print(x + " " + y)
 # z = x + " " + y
 # type(z)
