@@ -14,4 +14,8 @@ print(4.9)
 is_published = False
 print(is_published)
 
+l = [1,2,3,4,5]
+l.append(100)
+
+
 
