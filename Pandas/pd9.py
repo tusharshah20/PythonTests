@@ -60,7 +60,7 @@ df
 
 #using ffill
 df = pd.DataFrame(np.random.randn(6, 3))
-df.ix[2:, 1] = NA
+df.loc[2:, 1] = NA
 df.loc[4:, 2] = NA
 df
 df.fillna(method='ffill')

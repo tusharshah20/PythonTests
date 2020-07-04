@@ -71,7 +71,7 @@ print(frame2.columns)
 #will be reflected in the DataFrame. The column can be explicitly copied
 #using the Series’s copy method.
 
-#####RESUME HERE#######
+
 #Another common form of data is a nested dict of dicts format:
 pop = {'norway': {2001: 2.4, 2002: 2.9},
 	'denmark': {2000: 1.5, 2001: 1.7, 2002: 3.6}}

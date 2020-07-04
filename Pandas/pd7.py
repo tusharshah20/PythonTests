@@ -24,6 +24,8 @@ print(frame.applymap(format))
 #map method in series for element-wise function
 print(frame['e'].map(format))
 
+
+
 #Sorting & Ranking
 #To sort lexicographically by row or column index, use the sort_index method
 ser8 = pd.Series(range(4), index=['d', 'a', 'b', 'c'])
@@ -41,6 +43,7 @@ print(frame.sort_index(axis=1))
 print(frame.sort_index(axis=1, ascending=False))
 
 #sorting dataframe by values
+import pandas as pd
 frame = pd.DataFrame({'b': [4, 7, -3, 2], 'a': [0, 1, 0, 1]})
 print(frame)
 print(frame.sort_index(by='b'))
