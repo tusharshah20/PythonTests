@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 from scipy.interpolate import interp1d
 from sklearn.metrics import mean_squared_error
-df_orig = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'], index_col='date').head(100)
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10_missings.csv', parse_dates=['date'], index_col='date')
+df_orig = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'], index_col='date').head(100)
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10_missings.csv', parse_dates=['date'], index_col='date')
 
 fig, axes = plt.subplots(7, 1, sharex=True, figsize=(10, 12))
 plt.rcParams.update({'xtick.bottom' : False})

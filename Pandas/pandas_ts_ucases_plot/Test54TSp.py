@@ -9,7 +9,7 @@ from statsmodels.tsa.seasonal import seasonal_decompose
 
 
 # Import Data
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'], index_col='date')
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'], index_col='date')
 
 
 # Multiplicative Decomposition 

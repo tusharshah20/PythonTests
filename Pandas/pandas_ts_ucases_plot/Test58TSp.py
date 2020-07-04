@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 
 from statsmodels.tsa.seasonal import seasonal_decompose
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'], index_col='date')
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'], index_col='date')
 result_mul = seasonal_decompose(df['value'], model='multiplicative', extrapolate_trend='freq')
 detrended = df.value.values - result_mul.trend
 plt.plot(detrended)

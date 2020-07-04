@@ -5,7 +5,7 @@ import seaborn as sns
 import numpy as np
 import pandas as pd
 from statsmodels.tsa.stattools import adfuller, kpss
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'])
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'])
 
 # ADF Test
 result = adfuller(df.value.values, autolag='AIC')

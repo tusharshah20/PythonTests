@@ -8,7 +8,7 @@ import numpy as np
 import pandas as pd
 
 from scipy import signal
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'])
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'])
 detrended = signal.detrend(df.value.values)
 plt.plot(detrended)
 plt.title('Drug Sales detrended by subtracting the least squares fit', fontsize=16)

@@ -5,7 +5,7 @@ import numpy as np
 import pandas as pd
 #plt.rcParams.update({'figure.figsize': (10, 7), 'figure.dpi': 120})
 # Import data
-ap = pd.read_csv('I:\\Trainings\\MyContent\\Books\\resources\\AirPassengers.csv', parse_dates=['date'])
+ap = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/AirPassengers.csv', parse_dates=['date'])
 x = ap['date'].values
 y1 = ap['value'].values
 

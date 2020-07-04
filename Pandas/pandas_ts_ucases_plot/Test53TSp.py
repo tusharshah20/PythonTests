@@ -7,7 +7,7 @@ import pandas as pd
 plt.rcParams.update({'figure.figsize': (10, 7), 'figure.dpi': 120})
 
 # Import as Dataframe from web
-#df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'])
+#df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'])
 #df.head()
 
 # Import as Dataframe from disk
@@ -18,7 +18,7 @@ print(dfT.head())
 
 #Import it as a pandas Series with the date as index.
 #specify the index_col argument in the pd.read_csv()
-#ser = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'], index_col='date')
+#ser = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'], index_col='date')
 #ser.head()
 #print(ser.head())
 #Note**the ‘value’ column is placed higher than date to imply that it is a series.

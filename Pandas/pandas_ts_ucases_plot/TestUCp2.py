@@ -1,5 +1,5 @@
 import pandas as pd
-opsd_daily = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/opsd_germany_daily.txt')
+opsd_daily = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/opsd_germany_daily.txt')
 print(opsd_daily.shape)
 print(opsd_daily.head(3))
 

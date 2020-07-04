@@ -9,7 +9,7 @@ import pandas as pd
 
 
 from pandas.plotting import autocorrelation_plot
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv')
 
 # Draw Plot
 plt.rcParams.update({'figure.figsize':(9,5), 'figure.dpi':120})

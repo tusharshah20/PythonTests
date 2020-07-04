@@ -8,7 +8,7 @@ import pandas as pd
 from statsmodels.tsa.stattools import acf, pacf
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 
-df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv')
 
 # Calculate ACF and PACF upto 50 lags
 # acf_50 = acf(df.value, nlags=50)
