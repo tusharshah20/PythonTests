@@ -1,3 +1,6 @@
+import pandas as pd
+import numpy as np
+
 df_student_math = pd.DataFrame({'student':['Tom','Jack','Dan','Ram','Jeff','David'],
 'ID':[10,56,31,85,9,22]})
 

@@ -14,6 +14,7 @@ ser11['c']
 
 #if DF with duplicate indexes
 df = pd.DataFrame(np.random.randn(4, 3), index=['a', 'a', 'b', 'b'])
+df
 df.loc['b']
 
 #other useful methods

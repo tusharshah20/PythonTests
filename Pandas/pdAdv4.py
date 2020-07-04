@@ -12,9 +12,6 @@ data.drop_duplicates()
 #data.drop_duplicates(['k1'])
 print(data.drop_duplicates())
 
-#both of these by default keep the first observed value combination.
-#data.drop_duplicates(['k1', 'k2'], take_last=True)
-
 #using funcs or mappings
 data = pd.DataFrame({'food': ['bacon', 'pulled pork', 'bacon', 'Pastrami',
 'corned beef', 'Bacon', 'pastrami', 'honey ham','nova lox'],

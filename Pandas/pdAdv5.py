@@ -5,6 +5,8 @@ ages = [20, 22, 25, 27, 21, 23, 37, 31, 61, 45, 41, 32]
 bins = [18, 25, 35, 60, 100]
 
 employees = pd.cut(ages, bins)
+employees
+
 group_names = ['Youth', 'YoungAdult', 'MiddleAged', 'Senior']
 employees1 = pd.cut(ages, bins, labels=group_names)
 #categorical object i.e array of strings indicating bin name

@@ -7,6 +7,9 @@ print(arr)
 np.concatenate([arr, arr], axis=1)
 print(np.concatenate([arr, arr], axis=1))
 
+np.concatenate([arr, arr], axis=0)
+print(np.concatenate([arr, arr], axis=0))
+
 #series with no index overlap
 #By default concat works along axis=0, producing another Series.
 
@@ -23,15 +26,19 @@ print(pd.concat([s1, s2, s3], axis=1))
 
 #intersect them by using join='inner'
 s4 = pd.concat([s1 * 5, s3])
+s4
+
 pd.concat([s1, s4], axis=1)
 print(pd.concat([s1, s4], axis=1))
 
+s1
+s4
 pd.concat([s1, s4], axis=1, join='inner')
 print(pd.concat([s1, s4], axis=1, join='inner'))
 
 pd.concat([s1, s4], axis=1, join_axes=[['a', 'c', 'b', 'e']])
 print(pd.concat([s1, s4], axis=1, join_axes=[['a', 'c', 'b', 'e']]))
-#pd.concat([s1, s4], axis=1).reindex
+pd.concat([s1, s4], axis=1).reindex
 
 #creating a hierarchical index on the concatenation axis
 result = pd.concat([s1, s1, s3], keys=['one', 'two', 'three'])
@@ -45,8 +52,10 @@ print(pd.concat([s1, s2, s3], axis=1, keys=['one', 'two', 'three']))
 #for Dataframes
 df1 = pd.DataFrame(np.arange(6).reshape(3, 2), index=['a', 'b', 'c'],columns=['one', 'two'])
 df2 = pd.DataFrame(5 + np.arange(4).reshape(2, 2), index=['a', 'c'],columns=['three', 'four'])
+
 pd.concat([df1, df2], axis=1, keys=['level1', 'level2'])
 print(pd.concat([df1, df2], axis=1, keys=['level1', 'level2']))
+pd.concat([df1, df2], axis=0, keys=['level1', 'level2'])
 
 #Using dict of objects instead of a list, the dict’s keys will be used for the keys
 pd.concat({'level1': df1, 'level2': df2}, axis=1)

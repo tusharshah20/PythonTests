@@ -7,7 +7,7 @@ import numpy as np
 #column index; it can be thought of as a dict of Series (one for all sharing the same index). 
 
 #create a dataframe from a dict of equal-length lists or NumPy arrays
-data = {'eucountry': ['paris', 'germany', 'austria', 'sweden', 'Norway'],
+data = {'eucountry': ['france', 'germany', 'austria', 'sweden', 'Norway'],
 'year': [2000, 2001, 2002, 2001, 2002],
 'popul': [1.5, 1.7, 3.6, 2.4, 2.9]}
 frame = pd.DataFrame(data)
@@ -18,13 +18,13 @@ print(frame)
 #print(frame)
 
 #if we specify a sequence of columns, the DataFrame’s columns will be exactly what we pass
-pd.DataFrame(data, columns=['year', 'eucountry', 'popul'])
 print(pd.DataFrame(data, columns=['year', 'eucountry', 'popul']))
-print(frame)
+framenew = pd.DataFrame(data, columns=['year', 'eucountry', 'popul'])
+print(framenew)
 
 #As with Series, if you pass a column that isn’t contained in data, it will appear with NA values in the result
 frame2 = pd.DataFrame(data, columns=['year', 'eucountry', 'popul', 'debt'],
-	 index=['one', 'two', 'three', 'four', 'five'])
+	 			index=['one', 'two', 'three', 'four', 'five'])
 print(frame2)
 print(frame2.columns)
 
@@ -41,6 +41,7 @@ print(frame2.ix['three'])
 #.iloc for positional indexing
 
 print(frame2.loc['three'])
+print(frame2.iloc[3])
 
 #Columns can be modified by assignment. For example, the empty 'debt' column could be assigned a scalar 
 #value or an array of values
@@ -58,7 +59,7 @@ frame2['debt'] = val
 print(frame2)
 
 #Assigning a column that doesn’t exist will create a new column. 
-frame2['eastern'] = frame2.eucountry == 'paris'
+frame2['eastern'] = frame2.eucountry == 'france'
 print(frame2)
 
 #The del keyword will delete columns as with a dict:
@@ -70,6 +71,7 @@ print(frame2.columns)
 #will be reflected in the DataFrame. The column can be explicitly copied
 #using the Series’s copy method.
 
+#####RESUME HERE#######
 #Another common form of data is a nested dict of dicts format:
 pop = {'norway': {2001: 2.4, 2002: 2.9},
 	'denmark': {2000: 1.5, 2001: 1.7, 2002: 3.6}}

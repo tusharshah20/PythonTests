@@ -1,5 +1,6 @@
 import pandas as pd
-power = pd.read_csv("I:\\Trainings\\MyContent\\Books\\resources\\power.csv")
+power = pd.read_csv("I:\\GitContent\\Datasets\\power.csv")
+
 
 power.columns
 df = pd.DataFrame(power)

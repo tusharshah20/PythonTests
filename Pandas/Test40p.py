@@ -1,7 +1,7 @@
 import pandas as pd
-x = pd.read_csv("I:\\Trainings\\MyContent\\Books\\resources\\Bank_full.csv")
+x = pd.read_csv("I:\\GitContent\\Datasets\\Bank_full.csv")
 #reading from web to create dataframe
-#y = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/Bank_full.csv')
+#y = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/datasets/Bank_full.csv')
 df = pd.DataFrame(x)
 print(df.columns)
 print(x.values)

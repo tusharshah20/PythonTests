@@ -4,6 +4,7 @@ import numpy as np
 #Handling Missing Data
 #Note**All of the descriptive statistics on pandas objects exclude missing data.
 string_data = pd.Series(['apple', 'orange', np.nan, 'avocado','grapes'])
+string_data
 string_data.isnull()
 
 #built-in Python None value is also treated as NA in object arrays
@@ -14,7 +15,7 @@ string_data.isnull()
 #dropna Filter axis labels based on whether values for each label have missing data, 
 # with varying thresholds for how much missing data to tolerate.
 from numpy import nan as NA
-data = np.Series([1, NA, 3.5, NA, 7])
+data = pd.Series([1, NA, 3.5, NA, 7])
 data.dropna()
 
 #by boolean indexing method

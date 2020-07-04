@@ -1,5 +1,7 @@
+#Working with Series 
 #from pandas import Series, DataFrame
 import pandas as pd
+
 import numpy as np
 
 #Series
@@ -49,6 +51,8 @@ print('*' * 100)
 sdata = {'paris': 35000, 'germany': 71000, 'greece': 16000, 'norway': 5000}
 ser3 = pd.Series(sdata)
 print(ser3)
+print(ser3.index)
+print(ser3.values)
 print('*'*100)
 
 #When only passing a dict, the index in the resulting Series will have the 

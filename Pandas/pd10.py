@@ -51,10 +51,6 @@ frame['germany']
 #returns a new object with the levels interchanged
 frame.swaplevel('key1', 'key2')
 
-#sortlevel, sorts the data (stably) using only the values in a single level.
-#frame.sortlevel(1)
-#frame.swaplevel(0, 1).sortlevel(0)
-
 #Many descriptive and summary statistics on DataFrame and Series have a level option
 #in which you can specify the level you want to sum by on a particular axis.
 frame.sum(level='key2')
