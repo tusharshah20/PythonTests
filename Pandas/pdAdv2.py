@@ -36,9 +36,8 @@ s4
 pd.concat([s1, s4], axis=1, join='inner')
 print(pd.concat([s1, s4], axis=1, join='inner'))
 
-pd.concat([s1, s4], axis=1, join_axes=[['a', 'c', 'b', 'e']])
-print(pd.concat([s1, s4], axis=1, join_axes=[['a', 'c', 'b', 'e']]))
-pd.concat([s1, s4], axis=1).reindex
+n = pd.concat([s1, s4], axis=1)
+n.reindex(['a', 'c', 'b', 'e'])
 
 #creating a hierarchical index on the concatenation axis
 result = pd.concat([s1, s1, s3], keys=['one', 'two', 'three'])
