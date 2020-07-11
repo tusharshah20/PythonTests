@@ -1,30 +1,35 @@
-#pipeline using more than one estimator
+#import required library PCA
 #
-#import pipeline class
-from sklearn.pipeline import Pipeline
-
-#import Logistic regression estimator
-from sklearn.linear_model import LogisticRegression
-
-#import linear estimator
-from sklearn.linear_model import LinearRegression
-
-#import PCA estimator for dimensionality reduction
 from sklearn.decomposition import PCA
 
-#chain the estimators together
-#Incorrect chaining[as either "LogisticRegression()" or "LinearRegression()" can be used but 
-# not both ]: estimator = [('dim_reduction', PCA(),('Logres_model', LogisticRegression()), 
-# ('Linear_model'), LinearRegression())]
+#import the dataset
+from sklearn.datasets import make_blobs
 
-#correct chaining
-estimator = [('dim_reduction', PCA()), ('Linear_model', LinearRegression())]
+#define sample and random state
+n_sample = 20
+random_state = 20
 
-#put chain of estimators in a pipeline object
-pipeline_estimator = Pipeline(estimator)
+#generate the dataset with 10 features (dimension)
+X,y = make_blobs(n_samples=n_sample,n_features=10,random_state=None)
+#Aim is to reduce the no of features present in dataset to defined/desired 
+# low dimensional value
 
-#check the chain of estimator
-print(pipeline_estimator.steps[1])
-print(pipeline_estimator.steps)
+#view the shape of dataset
+print(X.shape)
 
+#define the PCA estimator with number of reduced components
+#to reduce features from 10 to say 3
+pca = PCA(n_components=3)
 
+#fit the data into the PCA-estimator
+pca.fit(X)
+print(pca.explained_variance_ratio_)
+
+#print the find PCA component
+first_pca = pca.components_[0]
+print(first_pca)
+
+#transform the fitted data using transform method to apply dimensionality reduction
+pca_reduced = pca.transform(X)
+
+print(pca_reduced.shape)

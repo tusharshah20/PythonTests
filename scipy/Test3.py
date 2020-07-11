@@ -4,7 +4,7 @@ from scipy import optimize
 from scipy import linalg
 
 #help(cluster)
-#help(optimize)
+help(optimize)
 #help(linalg)
 
 #to perform quad integration on function x from limit 0 to 1

@@ -55,6 +55,7 @@ sol = minimize(objective,x0,method='SLSQP',constraints=cons,options={'disp':True
 #retrieve optimized box sizing and volume
 x0Opt = sol.x
 volumeOpt = -sol.fun
+volumeOpt
 
 #calculate surface area with optimized values just to double check
 surfaceAreaOpt = calcSurface(x0Opt)

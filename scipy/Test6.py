@@ -16,6 +16,7 @@ yData = np.array([1,9,50,300,1500])
 
 #Plot experimental data points
 plt.plot(xData,yData, 'bo', label = 'experimental-data')
+plt.show()
 
 #Initial guess for paramters can be provided if needed
 #initialGuess = [1.0,1.0]

@@ -21,6 +21,7 @@ def f(x):
 #minimization of scalar function of one or more variables using bfgs algorithm
 #options being set to true will display covergence messages such as
 #Current Function Value, Iterations, Function evaluations, Gradient evaluation
+optimize.minimize()
 minimaValue = optimize.minimize(f,x0=2,method='bfgs',options={'disp':True})
 
 

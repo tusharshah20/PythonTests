@@ -21,6 +21,7 @@ numSvdArr = np.array([[3,5,1],[9,5,7]])
 numSvdArr.shape
 
 linalg.svd(numSvdArr)
+linalg.svd(numArray)
 
 #Calculate eigenvalues and eigenvector
 #creating a test dataset from a rating system on a scale of 1 to 10 as numpy array

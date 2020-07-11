@@ -1,35 +1,31 @@
-#import required library PCA
-#
-from sklearn.decomposition import PCA
+#K-Means using sklearn
+#kmeans test
+import numpy as np
+#import KMeans class from sklearn.cluster
+from sklearn.cluster import KMeans
+#scikit has random sample generators
+#import make_blobs dataset from sklearn.cluster
+#they are used to create artifical datasets of a specified complexity n size
 
-#import the dataset
 from sklearn.datasets import make_blobs
 
-#define sample and random state
-n_sample = 20
-random_state = 20
+#specify property of dataset to be generated
+#define number of samples
+n_samples = 300 #defines total no of points distributed equally
 
-#generate the dataset with 10 features (dimension)
-X,y = make_blobs(n_samples=n_sample,n_features=10,random_state=None)
-#Aim is to reduce the no of features present in dataset to defined/desired 
-# low dimensional value
+#define random state value to intialize the cluster
+random_state = 20 # to intialize the centroid
 
-#view the shape of dataset
-print(X.shape)
+#define how many features the sample will have
+X,y = make_blobs(n_samples=n_samples,n_features=5,random_state=None)
 
-#define the PCA estimator with number of reduced components
-#to reduce features from 10 to say 3
-pca = PCA(n_components=3)
+#define the number of clusters to be formed as 3 and fit features in model
+predict_y = KMeans(n_clusters=3,random_state=random_state).fit_predict(X)
 
-#fit the data into the PCA-estimator
-pca.fit(X)
-print(pca.explained_variance_ratio_)
+#if we print the estimator object, it returns lable value of each datapoint
 
-#print the find PCA component
-first_pca = pca.components_[0]
-print(first_pca)
+print(predict_y)
 
-#transform the fitted data using transform method to apply dimensionality reduction
-pca_reduced = pca.transform(X)
 
-print(pca_reduced.shape)
+
+

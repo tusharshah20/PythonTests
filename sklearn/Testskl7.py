@@ -1,47 +1,30 @@
-#Model persistence
+#pipeline using more than one estimator
 #
+#import pipeline class
+from sklearn.pipeline import Pipeline
 
-from sklearn.datasets import load_iris
-iris_dataset = load_iris()
-
-print(iris_dataset.feature_names)
-
-print(iris_dataset.target)
-
-#assign features and target objects
-X_feature = iris_dataset.data
-Y_target = iris_dataset.target
-
-#create object with new values for prediction
-X_new = [[3,5,4,1],[5,3,4,2]]
-
-#use logistic regression estimator
+#import Logistic regression estimator
 from sklearn.linear_model import LogisticRegression
-logreg = LogisticRegression()
 
-#fit data into estimator
-logreg.fit(X_feature,Y_target)
+#import linear estimator
+from sklearn.linear_model import LinearRegression
 
-#predict the outcome
-logreg.predict(X_new)
-print(logreg.predict(X_new))
+#import PCA estimator for dimensionality reduction
+from sklearn.decomposition import PCA
 
-#import library for model persistence
-import pickle as pkl
+#chain the estimators together
+#Incorrect chaining[as either "LogisticRegression()" or "LinearRegression()" can be used but 
+# not both ]: estimator = [('dim_reduction', PCA(),('Logres_model', LogisticRegression()), 
+# ('Linear_model'), LinearRegression())]
 
-#use dumps method to persist the model
-persist_model = pkl.dumps(logreg)
-print(persist_model)
+#correct chaining
+estimator = [('dim_reduction', PCA()), ('Linear_model', LinearRegression())]
 
-#use joblib.dump to persist the model to a file
-from sklearn.externals import joblib
-joblib.dump(logreg, 'regresfilename.pkl')
+#put chain of estimators in a pipeline object
+pipeline_estimator = Pipeline(estimator)
 
-#use joblib.load to create new estimator from the saved model
-new_logreg_estimator = joblib.load('regresfilename.pkl')
+#check the chain of estimator
+print(pipeline_estimator.steps[1])
+print(pipeline_estimator.steps)
 
-print(new_logreg_estimator)
-
-#validate and use new estimator to predict
-print(new_logreg_estimator.predict(X_new))
 
