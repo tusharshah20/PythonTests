@@ -89,6 +89,10 @@ print('variance score is %.2f ' % lineReg.score(X_test,Y_test))
 #from sklearn import metrics
 #print(np.sqrt(metrics.mean_squared_error(Y_test,y_pred)))
 
+#for extra information on using python for regression problems and using
+#spark as processing framework
+#https://github.com/ajaykuma/Spark_n_Scala/blob/master/SparkApplicationsSetup/SparkApplicationBasicExamples/SparkMllib/PySpark_Setup_Usage_forML_for_Regression_Analysis.txt
+
 
 
 
