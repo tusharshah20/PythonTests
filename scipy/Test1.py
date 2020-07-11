@@ -29,12 +29,14 @@ area = dblquad(f,0,2,0,5)
 print(area)
 #result would show (25.0, 2.7755575615628914e-13)
 
-#sometimes our integration may not be constant, say we want to apply lower and upper limit for y
-#lambda would be more useful to apply limits for constants
+#sometimes our integration may not be constant, say we want to apply lower and upper limit 
+# for y , lambda would be more useful to apply limits for constants
 y_low_limit = lambda y: y
 y_upp_limit = lambda y: y*5
+
 area = dblquad(f,0,2,y_low_limit,y_upp_limit)
 print(area)
+
 #result would show (48.000000000000014, 1.0588861835093356e-12)
 
 #using nquad for multiple integration
