@@ -15,8 +15,10 @@ df.head()
 
 #getting rid of useless columns/features which do not affect on our result/predicting labels
 df.drop(['id'], 1, inplace=True)
+df.head()
 
 X = np.array(df.drop(['class'],1))
+#X[0]
 y = np.array(df['class'])
 
 #split data into training and test set
