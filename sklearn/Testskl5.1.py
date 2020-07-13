@@ -13,9 +13,10 @@ X = np.array([[1,2],
               [5,8],
               [8,8],
               [1,0.6],[9,11]])
+X
 
-#plt.scatter(X[:,0],X[:,1], s= 100, linewidth=5)
-#plt.show()
+# plt.scatter(X[:,0],X[:,1], s= 100, linewidth=5)
+# plt.show()
 
 #define classifier
 clf = KMeans(n_clusters=2)
@@ -55,7 +56,8 @@ plt.show()
 #Using KMeans to separate people in two groups of ppl who would survive or die 
 
 df = pd.read_excel("https://raw.githubusercontent.com/ajaykuma/Datasets/master/titanic.xls")
-#df.head()
+df.head()
+
 #sex-imp characteristic but not numerical
 #cabin-imp characteristic but not numerical
 #embarked-imp characteristic but not numerical
@@ -63,7 +65,7 @@ df = pd.read_excel("https://raw.githubusercontent.com/ajaykuma/Datasets/master/t
 
 #ML would prefer numerical data
 df.drop(['body','name'],1,inplace=True)
-df.covert_objects(convert_numeric=True)
+#df.convert_objects(convert_numeric=True)
 df.fillna(0, inplace =True)
 
 def handle_non_numerical_data(df):

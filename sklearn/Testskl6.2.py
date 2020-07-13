@@ -33,7 +33,7 @@ scaled_data.shape
 
 #Applying PCA technique
 from sklearn.decomposition import PCA
-pca = PCA(n_components=30)
+pca = PCA(n_components=2)
 
 pca.fit(scaled_data)
 
