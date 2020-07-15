@@ -1,5 +1,5 @@
 #Reindexing
-#to create a new object with the data conformed to a new index.
+#to create a new object with the data confirmed to a new index.
 import pandas as pd
 import numpy as np
 ser = pd.Series([1,2,3,4], index=['d','b','c','a'])
@@ -52,11 +52,13 @@ print(frame.loc[['a', 'b', 'c', 'd'], country])
 #Dropping one or more entries from an axis is easy if you have an index array or list
 #without those entries.
 ser6 = pd.Series(np.arange(5.), index=['a', 'b', 'c', 'd', 'e'])
+ser6
 new_ser = ser6.drop('c')
 new_ser
 print(new_ser)
 
 print(ser6.drop(['a','c']))
+ser6
 
 #With DataFrame, index values can be deleted from either axis:
 data = pd.DataFrame(np.arange(16).reshape((4, 4)),

@@ -7,7 +7,7 @@ import pandas as pd
 plt.rcParams.update({'figure.figsize': (10, 7), 'figure.dpi': 120})
 
 #Boxplot of Month-wise (Seasonal) and Year-wise (trend) Distribution
-ser = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/PythonCodes/master/SampleFiles/a10.csv', parse_dates=['date'], index_col='date')
+ser = pd.read_csv('https://raw.githubusercontent.com/ajaykuma/Datasets/master/a10.csv', parse_dates=['date'], index_col='date')
 ser.head()
 print(ser.head())
 ser.reset_index(inplace=True)

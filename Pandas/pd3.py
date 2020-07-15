@@ -5,9 +5,10 @@ import pandas as pd
 import numpy as np
 from pandas import Series,DataFrame
 item = pd.Series(range(3),index = ['a','b','c'])
+print(item)
 index = item.index
-
 print(index)
+
 index[1:]
 print(index[1:])
 
@@ -21,7 +22,7 @@ index
 index = pd.Index(np.arange(3))
 print(index)
 print('*' * 50)
-item2 = Series([1,2,3],index=index)
+item2 = pd.Series([1,2,3],index=index)
 item2.index is index
 print(item2.index is index)
 

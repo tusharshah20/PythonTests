@@ -1,30 +1,77 @@
-#K-Means using sklearn
-#kmeans test
+#K Nearest Neighbors
+# https://github.com/ajaykuma/Datasets/blob/master/breast-cancer-wisconsin.data
+# https://github.com/ajaykuma/Datasets/blob/master/breast-cancer-wisconsin.names
+# The headers in data were created based on entries in names file.
+#Looking in names also shows about Missing attributes denoted by "?"
+
 import numpy as np
-#import KMeans class from sklearn.cluster
-from sklearn.cluster import KMeans
-#scikit has random sample generators
-#import make_blobs dataset from sklearn.cluster
-#they are used to create artifical datasets of a specified complexity n size
+from sklearn import preprocessing, neighbors
+from sklearn.model_selection import train_test_split
+import pandas as pd
 
-from sklearn.datasets import make_blobs
+df = pd.read_csv("https://raw.githubusercontent.com/ajaykuma/Datasets/master/breast-cancer-wisconsin.data")
+df.replace('?', -99999,inplace=True) #giving this value, makes it huge outlier
+df.head()
 
-#specify property of dataset to be generated
-#define number of samples
-n_samples = 300 #defines total no of points distributed equally
+#getting rid of useless columns/features which do not affect on our result/predicting labels
+df.drop(['id'], 1, inplace=True)
+df.head()
 
-#define random state value to intialize the cluster
-random_state = 20 # to intialize the centroid
+X = np.array(df.drop(['class'],1))
+#X[0]
+y = np.array(df['class'])
 
-#define how many features the sample will have
-X,y = make_blobs(n_samples=n_samples,n_features=5,random_state=None)
+#split data into training and test set
+X_train, X_test, y_train,y_test = train_test_split(X,y,test_size=0.2)
 
-#define the number of clusters to be formed as 3 and fit features in model
-predict_y = KMeans(n_clusters=3,random_state=random_state).fit_predict(X)
+#define classifier
+clf = neighbors.KNeighborsClassifier()
 
-#if we print the estimator object, it returns lable value of each datapoint
+#use the fit 
+clf.fit(X_train, y_train)
 
-print(predict_y)
+#measuring accuracy/confidence
+accuracy = clf.score(X_test, y_test)
+
+print(accuracy)
+
+#try repeating the whole code without dropping the ID column i.e. commenting
+#df.drop(['id'], 1, inplace=True)
+
+#summary : We have trained and tested our classifier
+
+#Making Predictions
+#below we are not taking the 'id' and 'class' column and creating an array with 
+#unique combination of attributes
+example_measures = np.array([4,2,1,1,1,2,3,2,1])
+example_measures = example_measures.reshape(1,-1)
+prediction = clf.predict(example_measures)
+
+print(prediction)
+
+#considering more set of values
+example_measures = np.array([[4,2,1,1,1,2,3,2,1],[4,2,1,1,1,2,3,2,1]])
+example_measures = example_measures.reshape(2,-1)
+prediction = clf.predict(example_measures)
+
+print(prediction)
+
+#if length of example_measures unknown, we can instead provide the length in reshape
+example_measures = np.array([[4,2,1,1,1,2,3,2,1],[4,2,1,1,1,2,3,2,1]])
+example_measures = example_measures.reshape(len(example_measures),-1)
+prediction = clf.predict(example_measures)
+
+print(prediction)
+
+#Euclidean distance calculation
+from math import sqrt
+plot1 = [1,3]
+plot2 = [2,5]
+
+euclidean_distance = sqrt( (plot1[0]-plot2[0])**2 + (plot1[1]-plot2[1])**2)
+print(euclidean_distance)
+
+
 
 
 
